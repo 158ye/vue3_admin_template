@@ -56,12 +56,12 @@ onMounted(() => {
     //     console.log(res)
     // })
 
-    reqLogin({
-        username: 'admin',
-        password: '111111'
-    }).then((res) => {
-        console.log(res)
-    })
+    // reqLogin({
+    //     username: 'admin',
+    //     password: '111111'
+    // }).then((res) => {
+    //     console.log(res)
+    // })
 })
 </script>
 
@@ -78,8 +78,8 @@ onMounted(() => {
 
 div {
     h2 {
-        color: $color;
-        font-size: $size;
+        // color: $color;
+        // font-size: $size;
     }
 }
 </style>

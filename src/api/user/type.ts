@@ -4,7 +4,8 @@ export interface loginFormData {
 }
 
 interface dataType{
-    token: string
+    token?: string
+    message?:string
 }
 export interface loginResponseData {
     code: number,
@@ -25,7 +26,8 @@ interface userInfo{
 }
 
 interface user{
-    checkUser:userInfo
+    checkUser:userInfo,
+    message:string,
 }
 export interface userInfoReponseData {
     code: number,

@@ -1,16 +1,16 @@
 <template>
     <div>
-        <h1>404</h1>
+        <h1>用户管理</h1>
     </div>
 </template>
 <script setup lang="ts">
     
 </script>
-<script lang="ts">
-export default{
-    name:'404'
-}
-</script>
 
 <style scoped lang="scss">
 </style>
+<script lang="ts">
+export default{
+    name:'User'
+}
+</script>

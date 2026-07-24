@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>404</h1>
+        <h1>品牌管理</h1>
     </div>
 </template>
 <script setup lang="ts">
@@ -8,9 +8,8 @@
 </script>
 <script lang="ts">
 export default{
-    name:'404'
+    name:'trademark'
 }
 </script>
-
 <style scoped lang="scss">
 </style>

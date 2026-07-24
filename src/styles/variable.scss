@@ -1,4 +1,17 @@
-@use './reset.scss';
+// @use './reset.scss';
 
-$color:red;
-$size:16px;
+//左侧菜单宽度
+$base-menu-width: 260px;
+//左侧菜单收缩后的宽度
+$base-menu-min-width:50px;
+//左侧菜单字体颜色
+$base-menu-color:#fff;
+//左侧菜单背景色
+$base-menu-background:#001529;
+//顶部导航栏高度
+$base-tabbar-height: 50px;
+
+//左侧菜单logo高度
+$base-menu-logo-height:50px;
+//左侧菜单logo文字大小
+$base-menu-title-fontSize:20px;
