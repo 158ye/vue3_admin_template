@@ -12,6 +12,8 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'virtual:svg-icons-register'
 import gloablComponent from './components/index';
 
+//引入路由鉴权
+import './permisstion.ts'
 import './styles/index.scss'
 
 //测试假接口
