@@ -41,7 +41,7 @@ router.beforeEach(async (to: any, from: any, next: any) => {
                     next()
                 } catch (error) {
                     //token过期或被手动修改
-                    userStore.userlogout()
+                    await userStore.userlogout()
                     next({path:'/login',query:{redirect: to.path}})
                 }
 

@@ -91,7 +91,6 @@ export default{
         height: calc(100vh - $base-tabbar-height);
         padding: 20px;
         overflow: auto;
-        background: green;
         transition: all .3s;
         &.fold{
             width: calc(100vw - $base-menu-min-width);

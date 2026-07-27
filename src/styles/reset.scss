@@ -88,7 +88,7 @@ textarea {
   margin: 0;
   font-size: inherit;
 }
-
+/*
 button,
 html [type="button"],
 [type="reset"],
@@ -100,6 +100,21 @@ html [type="button"],
   -webkit-appearance: button;
   cursor: pointer;
 }
+*/
+
+//只匹配【没有带类名的原生按钮】，避开 .el-button
+button:not([class]),
+html [type="button"]:not([class]),
+[type="reset"]:not([class]),
+[type="submit"]:not([class]) {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background-color: transparent;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {

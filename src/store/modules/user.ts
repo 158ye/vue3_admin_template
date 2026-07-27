@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
-import { reqLogin, reqUserInfo } from '@/api/user'
-import type { loginFormData, loginResponseData, userInfoReponseData } from '@/api/user/type'
+import { reqLogin, reqUserInfo, reqLogout } from '@/api/user'
 import type { UserState } from './types/types'
 import { SET_TOKEN, GET_TOKEN, REMOVE_TOKEN } from '@/utils/token'
 import { constantRoute } from '@/router/router'
+import type {loginFormData,loginResponseData,userInfoReponseData} from '@/api/user/type'
 
 const useUserStore = defineStore('user', {
     //存放数据
@@ -24,11 +24,11 @@ const useUserStore = defineStore('user', {
             let result: loginResponseData = await reqLogin(data)
             // console.log(result)
             if (result.code == 200) {
-                this.token = (result.data.token as string)
+                this.token = (result.data as string)
                 // localStorage.setItem('token', (result.data.token as string))
-                SET_TOKEN((result.data.token as string))
+                SET_TOKEN((result.data as string))
             } else {
-                return Promise.reject(new Error(result.data.message || '登录失败'))
+                return Promise.reject(new Error(result.message));
             }
 
         },
@@ -37,19 +37,25 @@ const useUserStore = defineStore('user', {
             let result: userInfoReponseData = await reqUserInfo()
             // console.log(result)
             if (result.code == 200) {
-                this.username = result.data.checkUser.username,
-                    this.avatar = result.data.checkUser.avatar
+                this.username = result.data.name,
+                    this.avatar = result.data.avatar
                 // console.log("获取数据成功",result.code)
             } else {
-                return Promise.reject(new Error(result.data.message))
+                return Promise.reject(new Error(result.message))
             }
         },
         //退出登陆
-        userlogout() {
-            this.token = '',
-                this.username = '',
-                this.avatar = ''
-            REMOVE_TOKEN()
+        async userlogout() {
+            let result: any = await reqLogout()
+            if (result.code == 200) {
+                this.token = '',
+                    this.username = '',
+                    this.avatar = ''
+                REMOVE_TOKEN()
+            } else {
+                return Promise.reject(new Error(result.message))
+            }
+
         }
     },
 

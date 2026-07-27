@@ -37,7 +37,7 @@ let ruleFormRef = ref()
 const loading = ref(false)
 const form = reactive({
     username: 'admin',
-    password: '111111'
+    password: '123456'
 })
 
 const login = async () => {

@@ -1,6 +1,6 @@
 import {defineStore} from 'pinia'
 
-let useLayoutSettingStore = defineStore('SettingStore',{
+const useLayoutSettingStore = defineStore('SettingStore',{
     state:()=>{
         return{
             fold:false, //用于控制顶部导航折叠
