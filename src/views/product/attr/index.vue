@@ -1,7 +1,7 @@
 <template>
     <Category :scene="scene" />
     <el-card style="margin: 10px 0;">
-        <div v-if="scene == 0">
+        <div v-show="scene == 0">
             <el-button type="primary" icon="Plus" :disabled="categoryStore.c3Id ? false : true"
                 @click="addAttr">添加属性</el-button>
             <el-table style="margin: 10px 0;" border :data="attrArr">
@@ -25,7 +25,7 @@
                 </el-table-column>
             </el-table>
         </div>
-        <div v-else>
+        <div v-show="scene==1">
             <el-form :inline="true">
                 <el-form-item label="属性名称">
                     <el-input v-model="attrParams.attrName" placeholder="请输入属性名称"></el-input>
